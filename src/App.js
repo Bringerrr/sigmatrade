@@ -13,8 +13,6 @@ function App() {
     <div className="App">
       <MainHeader />
         <BrowserRouter>
-
-        
       <div>
         <Route exact path="/" component={CatalogDisplay} />
         <Route path="/:filter" component={CatalogDisplay1} />

@@ -11,7 +11,7 @@ function CatalogDisplay() {
   return (
     <div className="CatalogDisplay">
      <h1>Catalog Display wafawf </h1>
-     <Row type="flex" justify="space-around" align="middle">
+     <Row>
                 <Col span={4}>
                   <LeftSidebar />
                 </Col>
@@ -25,7 +25,7 @@ function CatalogDisplay() {
       <a href="">Application List</a>
     </Breadcrumb.Item>
     <Breadcrumb.Item>An Application</Breadcrumb.Item>
-  </Breadcrumb>,
+  </Breadcrumb>
                 </Col>
                 <Col span={12} />
             </Row>
