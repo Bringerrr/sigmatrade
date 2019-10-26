@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sigmatrade/static/css/main.5afc22a3.chunk.css",
+    "main.css": "/sigmatrade/static/css/main.db18f85f.chunk.css",
     "main.js": "/sigmatrade/static/js/main.181d8bd5.chunk.js",
     "main.js.map": "/sigmatrade/static/js/main.181d8bd5.chunk.js.map",
     "runtime-main.js": "/sigmatrade/static/js/runtime-main.90a8455a.js",
@@ -9,16 +9,16 @@
     "static/js/2.71ba339e.chunk.js": "/sigmatrade/static/js/2.71ba339e.chunk.js",
     "static/js/2.71ba339e.chunk.js.map": "/sigmatrade/static/js/2.71ba339e.chunk.js.map",
     "index.html": "/sigmatrade/index.html",
-    "precache-manifest.bd93c62c2a4b444c04f1466093dda0f8.js": "/sigmatrade/precache-manifest.bd93c62c2a4b444c04f1466093dda0f8.js",
+    "precache-manifest.bdae5af054d19b6b7f9de50be53310d7.js": "/sigmatrade/precache-manifest.bdae5af054d19b6b7f9de50be53310d7.js",
     "service-worker.js": "/sigmatrade/service-worker.js",
     "static/css/2.aa7fcd32.chunk.css.map": "/sigmatrade/static/css/2.aa7fcd32.chunk.css.map",
-    "static/css/main.5afc22a3.chunk.css.map": "/sigmatrade/static/css/main.5afc22a3.chunk.css.map"
+    "static/css/main.db18f85f.chunk.css.map": "/sigmatrade/static/css/main.db18f85f.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.90a8455a.js",
     "static/css/2.aa7fcd32.chunk.css",
     "static/js/2.71ba339e.chunk.js",
-    "static/css/main.5afc22a3.chunk.css",
+    "static/css/main.db18f85f.chunk.css",
     "static/js/main.181d8bd5.chunk.js"
   ]
 }
