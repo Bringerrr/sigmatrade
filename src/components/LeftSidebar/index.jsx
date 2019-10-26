@@ -22,8 +22,8 @@ function LeftSidebar() {
     return (
         <div className="LeftSidebar">
             {LeftSidebarItems.map((item)=>{
-                if (item.type === "text") return <a href="#" className="LeftSidebar_Item__Text">{item.value}</a>
-                if (item.type === "button") return <a href="#" className="LeftSidebar_Item__Button" style={{backgroundColor: item.color}}>{item.value}</a>
+                if (item.type === "text") return <a href="#" className="LeftSidebar_Item __Text">{item.value}</a>
+                if (item.type === "button") return <a href="#" className="LeftSidebar_Item __Button" style={{backgroundColor: item.color}}>{item.value}</a>
             })}
         </div>
     );

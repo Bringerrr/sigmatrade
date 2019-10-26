@@ -1,7 +1,9 @@
-import React , { useRef, useEffect } from 'react';
+import React , { useRef, useEffect, useState } from 'react';
 import { Row, Col, Icon, Menu, Dropdown } from 'antd';
 
 import './index.scss'
+
+const { SubMenu } = Menu;
 
 const menu = (
     <Menu>
@@ -26,34 +28,54 @@ const lowerMenuItems = ['Встраиваемая техника', 'Крупна
 
 function MainHeader() {
 
+  const [currentMenu, setCurentMenu] = useState()
+
+  const handleClick = e => {
+    console.log('click ', e);
+    this.setState({
+      current: e.key,
+    });
+  };
+
     return (
         <div className="MainHeader">
           <div className="MainHeader_Upper">
-            <Row type="flex" justify="space-around" align="middle">
-                <Col span={4}>
+            <Row style={{height: '100%', position: 'relative'}} type="flex" justify="space-around" align="middle">
+                <Col span={3}>
                     <h3 className="MainHeader_Logo">
                         Сигма Трейд <span className="Logo_Add">24</span>
                     </h3>
                 </Col>
-                <Col span={8}>
+              <Col offset={1} span={8}>
                     <span className="MainHeader_YourManager">
                       <Icon style={{fontSize: '20px'}} type="user" />Ваш менеджер: <span className="YouManager_Name">Бабушкис Дмитрий</span>
                     </span>
                 </Col>
                 <Col span={12}>
-                    <div className="MainHeader_Info">
-                     <div>
-                         <Icon style={{fontSize: '20px', color:'white'}} type="user" />
-                         <Dropdown overlay={menu}>
-                            <a className="ant-dropdown-link" href="#">
-                            Александр <Icon type="down" />
-                            </a>
-                        </Dropdown>
-                        </div>
-                     <div>Мои заказы</div>
-                     <div>Корзина</div>
-                     <div><Icon style={{fontSize: '20px', color:'white'}} type="question" /></div>
-                    </div>
+              <Menu className="MainHeader_Upper_Right" onClick={handleClick} selectedKeys={[currentMenu]} mode="horizontal">
+                <SubMenu
+                    title={
+                      <span className="submenu-title-wrapper">
+                        <Icon style={{fontSize: '20px', color:'white'}} type="user" />
+                        Александр <Icon style={{fontSize: '8px', color:'white'}} type="down" />
+                      </span>
+                    }
+                  >
+                      <Menu.Item key="setting:1">Профиль</Menu.Item>
+                      <Menu.Item key="setting:4">Выйти</Menu.Item>
+                  </SubMenu>
+                <Menu.Item key="mail">
+                <Icon style={{fontSize: '20px', color:'white'}} type="user" />
+                Александр <Icon style={{fontSize: '8px', color:'white'}} type="down" />
+                </Menu.Item>
+                <Menu.Item key="app">
+                  <Icon type="appstore" />
+                  Корзина
+                </Menu.Item>
+                <Menu.Item key="alipay">
+                <Icon style={{fontSize: '20px', color:'white'}} type="question" />
+                </Menu.Item>
+              </Menu>
                 </Col>
             </Row>
            </div>

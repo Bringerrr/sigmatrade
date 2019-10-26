@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bringerrr.github.io/sigma",
+  "homepage": "https://bringerrr.github.io/sigmatrade",
   "dependencies": {
     "antd": "^3.24.2",
     "eval": "^0.1.4",
@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },

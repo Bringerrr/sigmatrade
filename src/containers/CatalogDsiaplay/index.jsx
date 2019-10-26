@@ -1,34 +1,47 @@
 import React from 'react';
 import LeftSidebar from '../../components/LeftSidebar'
-import { Breadcrumb, Alert ,Row, Col} from 'antd';
-
-
+import BuiltIn from '../BuiltIn'
+import { Breadcrumb, Alert, Row, Col } from 'antd';
+import { Route, NavLink} from 'react-router-dom';
 
 import './index.scss'
 
+const Links = [
+  { label: 'Главная', to: '/' },
+  { label: "Каталог продукции", to: '/catalog' },
+  { label: "Встраиваемая техника", to:'/catalog/built-in-appliances'},
+  { label: "Вытяжки", to: "/catalog/built-in-appliances/range-hoods"},
+  { label: "Встраиваемые", to:"/catalog/built-in-appliances/range-hoods/built-in"}]
+
+const { Item } = Breadcrumb;
 
 function CatalogDisplay() {
   return (
     <div className="CatalogDisplay">
-     <h1>Catalog Display wafawf </h1>
      <Row>
-                <Col span={4}>
+                <Col span={3}>
                   <LeftSidebar />
                 </Col>
-                <Col span={8}>
-                <Breadcrumb>
-    <Breadcrumb.Item>Home</Breadcrumb.Item>
-    <Breadcrumb.Item>
-      <a href="">Application Center</a>
-    </Breadcrumb.Item>
-    <Breadcrumb.Item>
-      <a href="">Application List</a>
-    </Breadcrumb.Item>
-    <Breadcrumb.Item>An Application</Breadcrumb.Item>
-  </Breadcrumb>
-                </Col>
-                <Col span={12} />
-            </Row>
+                <Col offset={1} span={20}>
+                  <Breadcrumb>
+                    {Links.map((link) => (
+                      <Item><NavLink
+                        to={link.to}
+                        activeStyle={{
+                          fontWeight: "bolder",
+                        }}
+                      >
+                        {link.label}
+                      </NavLink></Item>
+                    ))}
+          </Breadcrumb>
+          <div>
+        <Route exact path="/" component={BuiltIn} />
+        {/* <Route path="/:filter" component={CatalogDisplay1} /> */}
+      </div>
+        </Col>
+        
+      </Row>
     </div>
   );
 }

@@ -1,12 +1,16 @@
 .LeftSidebar {
   display: flex;
   flex-direction: column;
-  .LeftSidebar_Item__Text {
+  .LeftSidebar_Item.__Text {
     color: #000;
+    margin-top: 15px;
   }
-  .LeftSidebar_Item__Button {
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 40px;
+  .LeftSidebar_Item {
+    &.__Button {
+      color: rgb(255, 255, 255);
+      padding: 10px 10px 10px 30px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
   }
 }

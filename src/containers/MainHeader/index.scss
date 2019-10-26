@@ -38,15 +38,51 @@
       }
     }
 
-    .MainHeader_Info {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
+    // .MainHeader_Info {
+    //   width: 100%;
+    //   display: flex;
+    //   justify-content: flex-end;
+    //   .MainHeader_Info_Item {
+    //     margin-left: 10px;
+    //     height: 60px;
+    //     display: flex;
+    //     align-items: center;
+    //     padding: 10px;
+    //     cursor: pointer;
+    //     &:hover {
+    //       background-color: #722e6d;
+    //     }
+    //   }
+    // }
+
+    .MainHeader_Upper_Right {
+      border: none !important;
+      color: white;
+      background-color: transparent;
+      text-align: right;
+      li,
+      .ant-menu-submenu-title,
+      a {
+        padding: 0;
+        margin-left: 10px;
+        &:hover {
+          background-color: #722e6d;
+          color: white;
+          svg {
+            color: white;
+          }
+        }
+      }
+      & * {
+        border: none !important;
+      }
     }
   }
   .MainHeader_Lower {
     background-color: $black;
     padding: $paddings;
+    padding-top: 10px;
+    padding-bottom: 10px;
     a {
       margin-right: 15px;
     }
