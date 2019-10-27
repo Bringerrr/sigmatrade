@@ -1,0 +1,33 @@
+.BusketTable {
+  .TableCell_Product {
+    display: flex;
+    .Product_ImageContainer {
+      max-height: 150px;
+      width: 150px;
+      img {
+        height: 100%;
+      }
+    }
+    .Product_Quantity {
+      display: flex;
+      align-items: center;
+      .Quantity_StatusIcon {
+        width: 15px;
+        height: 15px;
+        background-color: green;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .TableCell_Count {
+    display: flex;
+    .TableCell_Count_Number {
+      margin-right: 40px;
+    }
+    .Buttons-Container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

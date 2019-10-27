@@ -1,0 +1,17 @@
+.CustomSearchInput {
+  position: relative;
+  .searchButton {
+    position: absolute;
+    background-color: #797979;
+    transform: translateX(-50%);
+  }
+  .ant-input {
+    background-color: #f2f2f2;
+  }
+  .ant-input-group-addon {
+    border-radius: 50%;
+    .ant-btn-primary {
+      background-color: #797979;
+    }
+  }
+}

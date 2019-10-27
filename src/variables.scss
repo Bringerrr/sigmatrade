@@ -2,3 +2,8 @@ $black: #000;
 $darkerPurple: rgb(142, 58, 136);
 
 $paddings: 0 40px;
+
+@mixin shadowBlock {
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px 0px rgba(142, 58, 136, 0.16);
+}

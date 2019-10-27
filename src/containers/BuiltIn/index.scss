@@ -5,7 +5,9 @@
     align-items: center;
     justify-content: space-between;
     .BuiltIn_Header__CustomSearchInput {
+      position: relative;
       .searchButton {
+        position: absolute;
         background-color: #797979;
         transform: translateX(-50%);
       }

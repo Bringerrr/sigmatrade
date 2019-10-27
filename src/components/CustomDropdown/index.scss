@@ -1,0 +1,13 @@
+.CustomDropDown {
+  .CustomDropDown-Container {
+    margin-top: 10px;
+
+    .CustomDropDown_Title {
+      display: flex;
+      justify-content: space-between;
+    }
+    .CustomDropDown_Description {
+      padding: 10px 0;
+    }
+  }
+}

@@ -1,6 +1,15 @@
 .LeftSidebar {
   display: flex;
   flex-direction: column;
+  .LeftSidebar_Nav,
+  .LeftSidebar_Buttons,
+  .LeftSidebar_News {
+    display: flex;
+    flex-direction: column;
+  }
+  .LeftSidebar_Buttons {
+    margin: 15px 0;
+  }
   .LeftSidebar_Item.__Text {
     color: #000;
     margin-top: 15px;

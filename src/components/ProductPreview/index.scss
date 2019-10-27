@@ -1,0 +1,27 @@
+@import '../../variables.scss';
+
+.ProductPreview {
+  @include shadowBlock;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  .imgContainer {
+    margin-top: 10%;
+    width: 90%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+    img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .ProductPreview_Tiltle {
+    padding: 10px;
+    text-align: center;
+  }
+}

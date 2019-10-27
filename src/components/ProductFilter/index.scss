@@ -1,0 +1,23 @@
+.ProductFilter {
+  border: 1px solid #bcbcbc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  .ProductFilter_Title {
+    padding: 10px 10px 0 10px;
+  }
+  .ant-checkbox-wrapper {
+    margin: 0px;
+  }
+  .Product_Attribute {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #bcbcbc;
+  }
+  .Button-Container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}
