@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, Input, Row, Checkbox, Button } from 'antd'
+import { Select, Input, Row, Checkbox, Button, Col } from 'antd'
 import './index.scss'
 
 const { Option, OptGroup } = Select
@@ -54,9 +54,13 @@ function ProductFilter() {
       </div>
       <div className="Product_Attribute">
         <b>Цена, Р</b>
-        <Row>
-          <Input placeholder="от 2 478"></Input>
-          <Input placeholder="до 587 412"></Input>
+        <Row style={{ marginBottom: '10px' }}>
+          <Col span={11}>
+            <Input placeholder="от 2 478"></Input>
+          </Col>
+          <Col offset={2} span={11}>
+            <Input placeholder="до 587 412"></Input>
+          </Col>
         </Row>
 
         <Checkbox>Скидки и акции</Checkbox>
@@ -84,9 +88,13 @@ function ProductFilter() {
 
       <div className="Product_Attribute">
         <b>Ширина встраивания, мм</b>
-        <Row>
-          <Input placeholder="от 21"></Input>
-          <Input placeholder="до 118"></Input>
+        <Row tpy="flex" justify="space-between">
+          <Col span={11}>
+            <Input placeholder="от 21"></Input>
+          </Col>
+          <Col offset={2} span={11}>
+            <Input placeholder="до 118"></Input>
+          </Col>
         </Row>
       </div>
 
@@ -95,8 +103,12 @@ function ProductFilter() {
           Производительность, м<sup>3</sup>/час
         </b>
         <Row>
-          <Input placeholder="от 21"></Input>
-          <Input placeholder="до 118"></Input>
+          <Col span={11}>
+            <Input placeholder="от 21"></Input>
+          </Col>
+          <Col offset={2} span={11}>
+            <Input placeholder="до 118"></Input>
+          </Col>
         </Row>
       </div>
 

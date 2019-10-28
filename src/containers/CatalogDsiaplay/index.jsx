@@ -85,8 +85,8 @@ const CatalogDisplay = ({ location: { pathname } }) => {
         <Col span={3}>
           <LeftSidebar />
         </Col>
-        <Col style={{ marginTop: '10px' }} offset={1} span={20}>
-          <Breadcrumb>
+        <Col style={{ marginTop: '24px' }} offset={1} span={20}>
+          <Breadcrumb style={{ marginBottom: '15px' }}>
             {breadcrumbItems}
             {/* {Links.map((link) => (
               <Breadcrumb.Item key="home">

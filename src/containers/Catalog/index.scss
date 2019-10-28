@@ -1,17 +1,36 @@
 .Catalog {
+  .Catalog_LowerHeader {
+    margin: 60px 0;
+  }
+  .Catalog_Button {
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    border-radius: 20px;
+    background-color: #8e3a88;
+    height: 40px;
+    margin-left: 20px;
+  }
+
   h1 {
     margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
   }
   ul {
     h3 {
       font-size: 24px;
       font-family: 'Roboto';
-      color: rgb(74, 54, 161);
+      color: rgb(142, 58, 136);
       line-height: 1.5;
+      font-weight: bold;
+      margin-bottom: 16px;
     }
 
     li {
-      margin-top: 10px;
+      margin-bottom: 16px;
       font-size: 16px;
     }
   }

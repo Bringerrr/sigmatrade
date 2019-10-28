@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'antd'
+import CustomSearchInput from '../../components/CustomSearchInput'
 
 import './index.scss'
 
@@ -80,10 +81,22 @@ function Catalog() {
   return (
     <div className="Catalog">
       <h1>Каталог продукции </h1>
+      <Row className="Catalog_LowerHeader" type="flex" justify="space-between">
+        <Col xs={24} sm={12} md={8} lg={8} xl={8}>
+          <CustomSearchInput />
+        </Col>
+        <Col xs={24} sm={12} md={14} lg={14} xl={14}>
+          <Row type="flex">
+            <div className="Catalog_Button"> Скидки</div>
+            <div className="Catalog_Button"> Акции</div>
+            <div className="Catalog_Button"> Уценки</div>
+          </Row>{' '}
+        </Col>
+      </Row>
       <Row type="flex" align="top" gutter={[8, 8]}>
         {CatalogData.map((kindOfProduction) => (
-          <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-            <ul>
+          <Col xs={24} sm={12} md={8} lg={8} xl={8}>
+            <ul style={{ marginBottom: '80px' }}>
               <h3>{kindOfProduction.title}</h3>
               {kindOfProduction.items.map((item) => (
                 <li>

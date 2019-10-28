@@ -1,9 +1,13 @@
 .BuiltIn {
+  h1 {
+    font-weight: bold;
+  }
   margin-top: 10px;
   .BuiltIn_Header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .BuiltIn_Header__CustomSearchInput {
       position: relative;
       .searchButton {
@@ -26,5 +30,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    .LowerHeader_Icons {
+      display: flex;
+    }
   }
 }

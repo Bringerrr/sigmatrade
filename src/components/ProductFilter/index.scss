@@ -1,4 +1,7 @@
 .ProductFilter {
+  b {
+    margin-bottom: 10px;
+  }
   border: 1px solid #bcbcbc;
   border-radius: 8px;
   display: flex;
@@ -7,7 +10,7 @@
     padding: 10px 10px 0 10px;
   }
   .ant-checkbox-wrapper {
-    margin: 0px;
+    margin: 0 0 8px 0;
   }
   .Product_Attribute {
     padding: 10px;

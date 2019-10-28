@@ -15,10 +15,10 @@ const buttons = [
 ]
 
 const news = [
-  { type: 'text', value: 'Лента новостей' },
-  { type: 'text', value: 'Лента новостей' },
-  { type: 'text', value: 'Лента новостей' },
-  { type: 'text', value: 'Лента новостей' }
+  { type: 'text', value: 'Скачать номеклатуру' },
+  { type: 'text', value: 'Скачать прайс' },
+  { type: 'text', value: 'Скачать прайс Excell' },
+  { type: 'text', value: 'Расписание обучения' }
 ]
 
 function LeftSidebar() {
