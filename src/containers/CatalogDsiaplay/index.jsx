@@ -6,6 +6,7 @@ import Catalog from '../Catalog'
 import BuiltInAppliances from '../BuiltInAppliances'
 import ProductCard from '../ProductCard'
 import Busket from '../Busket'
+import Checkout from '../Checkout'
 import { Breadcrumb, Alert, Row, Col } from 'antd'
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom'
 
@@ -36,7 +37,7 @@ const breadcrumbNameMap = {
   '/catalog/built-in-appliances/range-hoods/domed': 'Купольные',
   '/user-profile': 'Персональный раздел',
   '/user-profile/basket': 'Корзина',
-  '/user-profile/basket/checkout': 'Корзина'
+  '/user-profile/basket/checkout': 'Оформить заказ'
 }
 
 const dropdownItems = [
@@ -134,7 +135,7 @@ const CatalogDisplay = ({ location: { pathname } }) => {
 
               <Route
                 exact
-                component={BuiltIn}
+                component={Checkout}
                 path="/user-profile/basket/checkout"
               />
             </Switch>

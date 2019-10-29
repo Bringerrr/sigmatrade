@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col, Input, Button, Menu, Dropdown, Icon, Checkbox } from 'antd'
+import { NavLink } from 'react-router-dom'
 import rangeHood from '../../assets/rangeHood.webp' // Tell Webpack this JS file uses this image
 import Product from '../../components/Product'
 import ProductFilter from '../../components/ProductFilter'
@@ -194,7 +195,9 @@ function BuiltIn() {
                 lg={8}
                 xl={6}
               >
-                <Product data={product} />
+                <NavLink to="/catalog/built-in-appliances/range-hoods/domed/random">
+                  <Product data={product} />
+                </NavLink>
               </Col>
             ))}
           </Row>

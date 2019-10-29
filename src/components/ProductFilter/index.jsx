@@ -45,11 +45,9 @@ function ProductFilter() {
       <div className="Product_Attribute">
         <b>Тип вытяжки</b>
         <Select defaultValue="купольные" onChange={handleChange}>
-          <OptGroup label="Manager">
-            <Option value="не Купольные">Не Купольные</Option>
-            <Option value="почти купольные">почти Купольные</Option>
-            <Option value="Купольные">Купольные</Option>
-          </OptGroup>
+          <Option value="не Купольные">Не Купольные</Option>
+          <Option value="почти купольные">почти Купольные</Option>
+          <Option value="Купольные">Купольные</Option>
         </Select>
       </div>
       <div className="Product_Attribute">

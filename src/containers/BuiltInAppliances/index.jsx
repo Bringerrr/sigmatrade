@@ -2,11 +2,12 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import ProductPreviewBlock from '../../components/ProductPreview'
 import { one, two, three, four, five, six, seven, eight } from '../../assets/builtIn'
+import { NavLink } from 'react-router-dom'
 
 import './index.scss'
 
 const HoodsPreview = [
-  { title: 'Встраиваемые', img: one },
+  { title: 'Вытяжки', img: one },
   { title: 'Духовые шкафы', img: two },
   { title: 'Варочные поверхности', img: three },
   { title: 'Посудомоечные шкафы', img: four },
@@ -19,12 +20,14 @@ const HoodsPreview = [
 function BuiltInAppliances() {
   return (
     <div className="BuiltInAppliances">
-      <h1> Встраиваемаяя техника </h1>
+      <h1> Встраиваемая техника </h1>
       <Row gutter={[8, 8]}>
         {HoodsPreview.map((item) => (
-          <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-            <ProductPreviewBlock data={item} />
-          </Col>
+          <NavLink to="/catalog/built-in-appliances/range-hoods">
+            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+              <ProductPreviewBlock data={item} />
+            </Col>
+          </NavLink>
         ))}
       </Row>
     </div>

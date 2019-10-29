@@ -1,0 +1,42 @@
+@import '../../variables.scss';
+
+.Ckeckout {
+  margin-top: 10px;
+  .Ckeckout_Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      margin: 0;
+      font-weight: bold;
+    }
+    margin-bottom: 20px;
+  }
+
+  .Checkout_Form {
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.16);
+    padding: 40px;
+  }
+
+  .Ckeckout_Table {
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+    .Table_Footer {
+      display: flex;
+      justify-content: space-between;
+      .Input-Container {
+        width: 250px;
+      }
+
+      .Checkout_Amount {
+        .Amount_Title {
+          display: flex;
+        }
+      }
+    }
+  }
+}

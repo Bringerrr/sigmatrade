@@ -10,16 +10,14 @@ import MainHeader from './containers/MainHeader'
 
 function App() {
   return (
-    <div className="App">
-      <MainHeader />
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className="App">
+        <MainHeader />
         <div>
           <CatalogDisplay />
-          {/* <Route exact path="/" component={CatalogDisplay} /> */}
-          {/* <Route path="/:filter" component={CatalogDisplay1} /> */}
         </div>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }
 
