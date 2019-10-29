@@ -1,6 +1,7 @@
 .LeftSidebar {
   display: flex;
   flex-direction: column;
+  margin-right: 30px;
   .Navbar-Container.__wide {
     display: block;
   }
@@ -27,7 +28,6 @@
       padding: 10px 10px 10px 30px;
       border-radius: 20px;
       margin-top: 20px;
-      height: 40px;
     }
   }
 
@@ -54,8 +54,25 @@
   }
 }
 
+@media all and (max-width: 1261px) {
+  .LeftSidebar {
+    margin-right: 10px;
+    .LeftSidebar_Item {
+      &.__Button {
+        padding: 10px 10px 10px 10px;
+      }
+    }
+  }
+}
+
 @media all and (max-width: 768px) {
   .LeftSidebar {
+    .LeftSidebar_Item {
+      &.__Button {
+        padding: 10px 10px 10px 10px;
+        border-radius: 20px;
+      }
+    }
     .Navbar-Container.__wide {
       display: none;
     }

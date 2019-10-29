@@ -3,7 +3,7 @@ import { Table, Divider, Tag, Icon } from 'antd'
 import Busket from '../../containers/Busket'
 import './index.scss'
 
-const BusketTable = ({ data }) => {
+const BusketTable = ({ data, isCheckout }) => {
   const columns = [
     {
       title: 'Товары',
@@ -51,12 +51,22 @@ const BusketTable = ({ data }) => {
     }
   ]
 
+  if (isCheckout) {
+    columns.push({
+      title: 'Бонусы',
+      dataIndex: 'bonuses',
+      key: 'bonuses',
+      render: (bonus) => <span style={{ color: ' #8e3a88' }}>{bonus}</span>
+    })
+  }
+
   return (
     <Table
       pagination={false}
       className="BusketTable"
       dataSource={data}
       columns={columns}
+      scroll={{ x: 1300 }}
     />
   )
 }

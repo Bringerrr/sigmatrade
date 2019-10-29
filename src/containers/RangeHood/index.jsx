@@ -44,7 +44,9 @@ const HoodsPreview = [
 function RangeHood() {
   return (
     <div className="RangeHood">
-      <h1> Вытяжки </h1>
+      <h1>
+        <b>Вытяжки</b>
+      </h1>
       <Row type="flex" style={{ justifyContent: 'stretch' }} gutter={[8, 8]}>
         {HoodsPreview.map((item, index) => (
           <Col key={index} xs={24} sm={12} md={8} lg={6} xl={6}>

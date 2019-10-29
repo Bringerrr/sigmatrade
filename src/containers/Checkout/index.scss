@@ -1,13 +1,12 @@
 @import '../../variables.scss';
 
-.Ckeckout {
+.Checkout {
   margin-top: 10px;
-  .Ckeckout_Header {
+  .Checkout_Header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     h1 {
-      margin: 0;
+      margin: 0 0 60px 0;
       font-weight: bold;
     }
     margin-bottom: 20px;
@@ -18,11 +17,105 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.16);
     padding: 40px;
+    margin-bottom: 40px;
+    h3 {
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+    .Form_Input-Container {
+      display: flex;
+      flex-direction: column;
+      .Form_Input {
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        border: none;
+        width: 450px;
+        &:focus {
+          background-color: white !important;
+          box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.16);
+        }
+      }
+    }
+    .RadioWrapper {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 20px;
+      & > span {
+        display: block;
+      }
+      * {
+        border-color: rgb(142, 58, 136);
+        overflow-wrap: break-word;
+      }
+      .ant-radio-checked::after {
+      }
+      .ant-radio-inner::after {
+        background-color: rgb(142, 58, 136);
+        height: 12px;
+        width: 12px;
+      }
+      .ant-radio-inner {
+        height: 20px;
+        width: 20px;
+      }
+      .Radio_Text {
+        .Radio_Subtitle {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          white-space: normal;
+          color: grey;
+          margin-top: 5px;
+          font-size: 13px;
+        }
+        & > span {
+          display: block;
+        }
+      }
+    }
+
+    .Payment-Toggle {
+      display: flex;
+      margin-bottom: 40px;
+      .Payment {
+        box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.16);
+        border-radius: 20px;
+        display: inline-flex;
+        height: 160px;
+        width: 250px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        margin-right: 40px;
+        svg {
+          width: 60px;
+          height: 60px;
+          margin-bottom: 25px;
+          margin-top: 30px;
+        }
+        &.__Active {
+          border: 1px solid #8e3a88;
+          box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0);
+          svg {
+            fill: #8e3a88;
+          }
+        }
+      }
+    }
+
+    .Form-Dropdown {
+      .Dropdown-Input {
+        .ant-select-selection {
+          border-radius: 20px;
+        }
+      }
+    }
   }
 
   .Ckeckout_Table {
     border-radius: 20px;
-    background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.16);
     overflow: hidden;
     .Table_Footer {
@@ -35,6 +128,47 @@
       .Checkout_Amount {
         .Amount_Title {
           display: flex;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 576px) {
+  .Checkout {
+    .Checkout_Header {
+      .Header_row {
+        flex-direction: column-reverse;
+      }
+      h1 {
+        margin: 10px 0 10px 0;
+      }
+    }
+    .Form_Input {
+      width: 100% !important;
+    }
+
+    .Checkout_Form {
+      .Payment-Toggle {
+        flex-direction: column;
+        align-items: center;
+
+        .Payment {
+          margin-right: 0;
+          &:first-child {
+            margin-bottom: 30px;
+          }
+        }
+        .Form-Dropdown {
+          align-items: center;
+        }
+      }
+      .Form-Dropdown {
+        .Form-Dropdown_Title {
+          text-align: center;
+        }
+        .Dropdown-Input {
+          width: 100%;
         }
       }
     }

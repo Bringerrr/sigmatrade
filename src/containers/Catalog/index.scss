@@ -35,3 +35,42 @@
     }
   }
 }
+
+@media all and (max-width: 1200px) {
+  .Catalog {
+    .Button-Container {
+      .Catalog_Button {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+  .Catalog {
+    .Button-Container {
+      .Catalog_Button {
+        width: 80px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 576px) {
+  .Catalog {
+    .Catalog_LowerHeader {
+      margin: 20px 0;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .Button-Container {
+      margin-top: 20px;
+      justify-content: space-around;
+      .Catalog_Button {
+        width: 30%;
+        margin-left: 0px;
+      }
+    }
+  }
+}

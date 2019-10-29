@@ -65,18 +65,21 @@ function Busket() {
         <BusketTable data={dataTable} />
         <div className="Table_Footer">
           <div className="Input-Container">
-            Введите код купона для скидки
-            <Input></Input>
-            <Button>Применить</Button>
+            <div className="Input-Wrapper">
+              <h3>Введите код купона для скидки</h3>
+              <Input className="Input"></Input>
+            </div>
+
+            <Button className="Input-Button">Применить</Button>
           </div>
           <div className="Footer_Chekout">
             <div className="Checkout_Amount">
               <div className="Amount_Title">
-                <span>Итого: </span> <h3>41 280 P</h3>
+                <span>Итого: </span> <b>41 280 P</b>
               </div>
 
               <NavLink to="/user-profile/basket/checkout">
-                <Button>Оформить заказ</Button>
+                <Button className="Amount_Button">Оформить заказ</Button>
               </NavLink>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LeftSidebar from '../../components/LeftSidebar'
 import BuiltIn from '../BuiltIn'
 import RangeHood from '../RangeHood'
@@ -7,7 +7,7 @@ import BuiltInAppliances from '../BuiltInAppliances'
 import ProductCard from '../ProductCard'
 import Busket from '../Busket'
 import Checkout from '../Checkout'
-import { Breadcrumb, Alert, Row, Col } from 'antd'
+import { Breadcrumb, Alert, Row, Col, Button } from 'antd'
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom'
 
 import { domed } from '../../assets'
@@ -65,6 +65,7 @@ const defaultCardData = {
 }
 
 const CatalogDisplay = ({ location: { pathname } }) => {
+  const [sideBar, toggleSideBar] = []
   const pathSnippets = pathname.split('/').filter((i) => i)
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
     const url = `/${pathSnippets.slice(0, index + 1).join('/')}`
@@ -82,18 +83,26 @@ const CatalogDisplay = ({ location: { pathname } }) => {
 
   return (
     <div className="CatalogDisplay">
+      <Button
+        onClick={() => {
+          toggleSideBar()
+        }}
+        style={{ position: 'absolute' }}
+      >
+        Open
+      </Button>
       <Row gutter={[8, 8]}>
         <Col xs={0} sm={0} md={3}>
           <LeftSidebar />
         </Col>
         <Col style={{ marginTop: '24px' }} xs={24} sm={24} md={21}>
           <Breadcrumb style={{ marginBottom: '15px' }}>
-            {/* {breadcrumbItems} */}
-            {Links.map((link) => (
+            {breadcrumbItems}
+            {/* {Links.map((link) => (
               <Breadcrumb.Item key="home">
                 <NavLink to={link.to}>{link.label}</NavLink>
               </Breadcrumb.Item>
-            ))}
+            ))} */}
           </Breadcrumb>
           <div>
             <Switch>

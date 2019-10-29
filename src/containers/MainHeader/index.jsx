@@ -35,7 +35,7 @@ function MainHeader() {
           justify="space-around"
           align="middle"
         >
-          <Col span={3}>
+          <Col xs={9} sm={3}>
             <h3 className="MainHeader_Logo __Huge">
               Сигма Трейд <span className="Logo_Add">24</span>
             </h3>
@@ -43,13 +43,13 @@ function MainHeader() {
               СТ <span className="Logo_Add">24</span>
             </h3>
           </Col>
-          <Col offset={1} span={8}>
+          <Col offset={1} xs={0} sm={8} span={8}>
             <span className="MainHeader_YourManager">
               <Icon style={{ fontSize: '20px' }} type="user" />
               Ваш менеджер: <span className="YouManager_Name">Бабушкис Дмитрий</span>
             </span>
           </Col>
-          <Col style={{ height: '45px' }} span={12}>
+          <Col style={{ height: '100%' }} span={12}>
             <Menu
               className="MainHeader_Upper_Right"
               onClick={handleClick}
@@ -60,7 +60,7 @@ function MainHeader() {
                 title={
                   <span className="submenu-title-wrapper">
                     <Icon style={{ fontSize: '25px', color: 'white' }} type="user" />
-                    Александр{' '}
+                    <span className="Menu_Item-Text">Александр</span>
                     <Icon style={{ fontSize: '8px', color: 'white' }} type="down" />
                   </span>
                 }
@@ -73,7 +73,7 @@ function MainHeader() {
                   style={{ fontSize: '25px', color: 'white' }}
                   type="unordered-list"
                 />
-                Мои заказы{' '}
+                <span className="Menu_Item-Text">Мои заказы</span>
               </Menu.Item>
               <Menu.Item key="app">
                 <NavLink to="/user-profile/basket">
@@ -81,11 +81,15 @@ function MainHeader() {
                     style={{ fontSize: '25px', color: 'white' }}
                     type="shopping-cart"
                   />
-                  Корзина
+                  <span className="Menu_Item-Text">Корзина</span>
                 </NavLink>
               </Menu.Item>
               <Menu.Item key="alipay">
-                <Icon style={{ fontSize: '25px', color: 'white' }} type="question" />
+                <Icon
+                  style={{ fontSize: '25px', color: 'white', marginLeft: '5px' }}
+                  type="question"
+                />
+                <span style={{ opacity: 0, width: '0px' }}> w</span>
               </Menu.Item>
             </Menu>
           </Col>

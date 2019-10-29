@@ -53,12 +53,21 @@
       background-color: transparent;
       text-align: right;
       height: 100%;
-
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      &.ant-menu-horizontal {
+        line-height: 40px;
+      }
+      .Menu-Header__Slim {
+        display: none;
+      }
       li,
       .ant-menu-submenu-title,
       a {
         padding: 0;
         margin-left: 10px;
+        height: 100%;
         &:hover {
           background-color: #722e6d;
           color: white;
@@ -67,6 +76,24 @@
           }
         }
       }
+
+      .ant-menu-submenu-title {
+        display: flex;
+        align-items: center;
+      }
+
+      .ant-menu-item {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 10px;
+        & > a {
+          display: flex;
+          align-items: center;
+          margin-left: 0;
+          color: white;
+        }
+      }
+
       & * {
         border: none !important;
       }
@@ -101,8 +128,36 @@
   }
 }
 
+@media all and (max-width: 1532px) {
+  .MainHeader {
+    .MainHeader_Upper {
+      .MainHeader_Upper_Right {
+        &.ant-menu-horizontal {
+          height: 70px;
+        }
+      }
+    }
+  }
+}
+
 @media all and (max-width: 768px) {
   .MainHeader {
+    // .MainHeader_Upper {
+    //   padding: 0 10px;
+    // }
+    .MainHeader_Upper {
+      .MainHeader_Upper_Right {
+        &.ant-menu-horizontal {
+          height: 70px;
+        }
+      }
+    }
+    .Menu_Item-Text {
+      display: none;
+    }
+    .Menu-Header__Slim {
+      display: inline;
+    }
     .MainHeader_Upper {
       .MainHeader_Logo {
         &.__Huge {

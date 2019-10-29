@@ -87,7 +87,7 @@ function Catalog() {
           <CustomSearchInput />
         </Col>
         <Col xs={24} sm={12} md={14} lg={14} xl={14}>
-          <Row type="flex">
+          <Row className="Button-Container" type="flex" justify="end">
             <div className="Catalog_Button"> Скидки</div>
             <div className="Catalog_Button"> Акции</div>
             <div className="Catalog_Button"> Уценки</div>
