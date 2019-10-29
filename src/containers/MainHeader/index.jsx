@@ -19,13 +19,6 @@ const lowerMenuItems = [
 function MainHeader() {
   const [currentMenu, setCurentMenu] = useState()
 
-  const handleClick = (e) => {
-    console.log('click ', e)
-    this.setState({
-      current: e.key
-    })
-  }
-
   return (
     <div className="MainHeader">
       <div className="MainHeader_Upper">
@@ -52,7 +45,6 @@ function MainHeader() {
           <Col style={{ height: '100%' }} span={12}>
             <Menu
               className="MainHeader_Upper_Right"
-              onClick={handleClick}
               selectedKeys={[currentMenu]}
               mode="horizontal"
             >
@@ -100,7 +92,6 @@ function MainHeader() {
           <Col xs={24} sm={24} md={20} span={20}>
             <Menu
               className="MainHeader_Lower_Menu"
-              onClick={handleClick}
               selectedKeys={[currentMenu]}
               mode="horizontal"
             >

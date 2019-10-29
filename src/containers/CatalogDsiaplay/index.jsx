@@ -83,14 +83,14 @@ const CatalogDisplay = ({ location: { pathname } }) => {
 
   return (
     <div className="CatalogDisplay">
-      <Button
+      {/* <Button
         onClick={() => {
           toggleSideBar()
         }}
         style={{ position: 'absolute' }}
       >
         Open
-      </Button>
+      </Button> */}
       <Row gutter={[8, 8]}>
         <Col xs={0} sm={0} md={3}>
           <LeftSidebar />

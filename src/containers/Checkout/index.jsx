@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CustomSearchInput from '../../components/CustomSearchInput'
 import BusketTable from '../../components/BusketTable'
+import CheckoutCompleted from '../../components/CheckoutCompleted'
 import { twelve } from '../../assets'
 
 import { ReactComponent as PaymentIcon } from '../../assets/pay-day.svg'
@@ -90,107 +91,118 @@ const payment = [
 
 function Checkout() {
   const [currentPayment, setCurrentPayment] = useState(payment[0].type)
+  const [completed, setCompleted] = useState(false)
   return (
     <div className="Checkout">
-      <div className="Checkout_Header">
-        <Row
-          className="Header_row"
-          type="flex"
-          justify="space-between"
-          style={{ width: '100%' }}
-        >
-          <Col xs={24} sm={14} md={14} lg={14} xl={14}>
-            <h1>Оформление заказа </h1>
-          </Col>
-          <Col xs={24} sm={8} md={8} lg={8} xl={8}>
-            <CustomSearchInput />
-          </Col>
-        </Row>
-      </div>
-      <div className="Checkout_Form">
-        <h3>Контактная информация</h3>
-        {inputs.map((inputName) => (
-          <div className="Form_Input-Container">
-            <label>
-              {inputName}
-              <b style={{ color: 'red' }}> *</b>
-            </label>
-            <Input
-              style={{ backgroundColor: '#f2f2f2' }}
-              className="Form_Input"
-            ></Input>
-          </div>
-        ))}
-      </div>
-      <div className="Checkout_Form">
-        <h3>Доставка</h3>
-        <Radio.Group name="radiogroup" defaultValue={99}>
-          <Row>
-            <Col style={{ display: 'flex' }} xs={24} sm={12}>
-              <Radio className="RadioWrapper" value={99}>
-                Самовывоз: <b>бесплатно</b>
-              </Radio>
-            </Col>
-            {radio.map((radioItem, index) => (
-              <Col style={{ display: 'flex' }} xs={24} sm={12}>
-                <Radio className="RadioWrapper" value={index}>
-                  <div className="Radio_Text">
-                    <span className="Radio_Title">{radioItem.title}</span>
-                    {radioItem.subtitle && (
-                      <span className="Radio_Subtitle">{radioItem.subtitle}</span>
-                    )}
-                  </div>
-                </Radio>
-              </Col>
-            ))}
-          </Row>
-        </Radio.Group>
-      </div>
-      <div className="Checkout_Form">
-        <h3>Оплата</h3>
-        <div className="Payment-Toggle">
-          {payment.map((payment) => (
-            <div
-              className={`Payment ${payment.type === currentPayment && '__Active'}`}
-              onClick={() => setCurrentPayment(payment.type)}
+      {completed ? (
+        <CheckoutCompleted />
+      ) : (
+        <>
+          <div className="Checkout_Header">
+            <Row
+              className="Header_row"
+              type="flex"
+              justify="space-between"
+              style={{ width: '100%' }}
             >
-              {payment.icon}
-              <span>{payment.type}</span>
-            </div>
-          ))}
-        </div>
-        <div className="Form-Dropdown">
-          <div className={'Form-Dropdown_Title'} style={{ marginBottom: '20px' }}>
-            Компания для поучения счета
+              <Col xs={24} sm={14} md={14} lg={14} xl={14}>
+                <h1>Оформление заказа </h1>
+              </Col>
+              <Col xs={24} sm={8} md={8} lg={8} xl={8}>
+                <CustomSearchInput />
+              </Col>
+            </Row>
           </div>
-          <Select className="Dropdown-Input" defaultValue="1">
-            <Option value="1">ООО "Тестовая компания"</Option>
-            <Option value="2">ООО "Тестовая компания"</Option>
-            <Option value="3">ООО "Тестовая компания"</Option>
-          </Select>
-        </div>
-      </div>
-      <div className="Busket_Table">
-        <BusketTable isCheckout data={dataTable} />
-        <div className="Table_Footer">
-          <div className="Input-Container">
-            Введите код купона для скидки
-            <Input></Input>
-            <Button>Применить</Button>
-          </div>
-          <div className="Footer_Chekout">
-            <div className="Checkout_Amount">
-              <div className="Amount_Title">
-                <span>Итого: </span> <h3>41 280 P</h3>
+          <div className="Checkout_Form">
+            <h3>Контактная информация</h3>
+            {inputs.map((inputName) => (
+              <div className="Form_Input-Container">
+                <label>
+                  {inputName}
+                  <b style={{ color: 'red' }}> *</b>
+                </label>
+                <Input
+                  style={{ backgroundColor: '#f2f2f2' }}
+                  className="Form_Input"
+                ></Input>
               </div>
-
-              <NavLink to="/">
-                <Button>Оформить заказ</Button>
-              </NavLink>
+            ))}
+          </div>
+          <div className="Checkout_Form">
+            <h3>Доставка</h3>
+            <Radio.Group name="radiogroup" defaultValue={99}>
+              <Row>
+                <Col style={{ display: 'flex' }} xs={24} sm={12}>
+                  <Radio className="RadioWrapper" value={99}>
+                    Самовывоз: <b>бесплатно</b>
+                  </Radio>
+                </Col>
+                {radio.map((radioItem, index) => (
+                  <Col style={{ display: 'flex' }} xs={24} sm={12}>
+                    <Radio className="RadioWrapper" value={index}>
+                      <div className="Radio_Text">
+                        <span className="Radio_Title">{radioItem.title}</span>
+                        {radioItem.subtitle && (
+                          <span className="Radio_Subtitle">
+                            {radioItem.subtitle}
+                          </span>
+                        )}
+                      </div>
+                    </Radio>
+                  </Col>
+                ))}
+              </Row>
+            </Radio.Group>
+          </div>
+          <div className="Checkout_Form">
+            <h3>Оплата</h3>
+            <div className="Payment-Toggle">
+              {payment.map((payment) => (
+                <div
+                  className={`Payment ${payment.type === currentPayment &&
+                    '__Active'}`}
+                  onClick={() => setCurrentPayment(payment.type)}
+                >
+                  {payment.icon}
+                  <span>{payment.type}</span>
+                </div>
+              ))}
+            </div>
+            <div className="Form-Dropdown">
+              <div
+                className={'Form-Dropdown_Title'}
+                style={{ marginBottom: '20px' }}
+              >
+                Компания для поучения счета
+              </div>
+              <Select className="Dropdown-Input" defaultValue="1">
+                <Option value="1">ООО "Тестовая компания"</Option>
+                <Option value="2">ООО "Тестовая компания"</Option>
+                <Option value="3">ООО "Тестовая компания"</Option>
+              </Select>
             </div>
           </div>
-        </div>
-      </div>
+          <div className="Busket_Table">
+            <BusketTable isCheckout data={dataTable} />
+            <div className="Table_Footer">
+              <div className="Input-Container">
+                Введите код купона для скидки
+                <Input></Input>
+                <Button>Применить</Button>
+              </div>
+              <div className="Footer_Chekout">
+                <div className="Checkout_Amount">
+                  <div className="Amount_Title">
+                    <span>Итого: </span> <h3>41 280 P</h3>
+                  </div>
+
+                  <Button onClick={() => setCompleted(true)}>Оформить заказ</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   )
 }
