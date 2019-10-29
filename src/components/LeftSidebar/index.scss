@@ -1,6 +1,12 @@
 .LeftSidebar {
   display: flex;
   flex-direction: column;
+  .Navbar-Container.__wide {
+    display: block;
+  }
+  .Navbar-Container.__slim {
+    display: none;
+  }
   .LeftSidebar_Nav,
   .LeftSidebar_Buttons,
   .LeftSidebar_News {
@@ -22,6 +28,39 @@
       border-radius: 20px;
       margin-top: 20px;
       height: 40px;
+    }
+  }
+
+  .showDrawer {
+    position: absolute;
+  }
+}
+
+.Navbar-Drawer {
+  .ant-drawer-body {
+    display: flex;
+    flex-direction: column;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      & > a {
+        margin-bottom: 20px;
+        color: black;
+        &.LeftSidebar_Item.__Button {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .LeftSidebar {
+    .Navbar-Container.__wide {
+      display: none;
+    }
+    .Navbar-Container.__slim {
+      display: block;
     }
   }
 }

@@ -165,14 +165,14 @@ function BuiltIn() {
         </Row>
       </div>
       <div className="BuiltIn_LowerHeader">
-        <div>
+        <div className="LowerHeader_Sort">
           <span> Сортировать: </span>
           <Dropdown overlay={menu} trigger={['click']}>
             <a className="ant-dropdown-link">
               {menuItem} <Icon type="down" />
             </a>
           </Dropdown>
-          <Checkbox style={{ marginLeft: '20px' }}>В наличии</Checkbox>
+          <Checkbox className="Sort_Checkbox">В наличии</Checkbox>
         </div>
         <div className="LowerHeader_Icons">
           <Icon
@@ -182,8 +182,8 @@ function BuiltIn() {
           <Icon style={{ fontSize: '30px' }} type="unordered-list" />
         </div>
       </div>
-      <Row>
-        <Col span={18}>
+      <Row type="flex" justify="space-between">
+        <Col xs={24} sm={24} md={18} lg={18} xl={18}>
           <Row gutter={[8, 8]} type="flex" justify="space-between">
             {products.map((product) => (
               <Col
@@ -191,7 +191,7 @@ function BuiltIn() {
                 xs={24}
                 sm={12}
                 md={8}
-                lg={6}
+                lg={8}
                 xl={6}
               >
                 <Product data={product} />
@@ -199,7 +199,7 @@ function BuiltIn() {
             ))}
           </Row>
         </Col>
-        <Col offset={2} span={4}>
+        <Col xs={0} sm={0} md={4} lg={4} xl={4} span={4}>
           <ProductFilter></ProductFilter>
         </Col>
       </Row>

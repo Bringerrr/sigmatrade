@@ -86,7 +86,9 @@ const ProductCard = ({ data }) => {
   return (
     <div ref={inputEl} className="ProductCard">
       <Row type="flex" justify="end">
-        <CustomSearchInput />
+        <Col xs={24} sm={18} md={12} lg={12} xl={8}>
+          <CustomSearchInput />
+        </Col>
       </Row>
       <Row>
         <Col xs={24} sm={24} md={14} lg={14} xl={14}>

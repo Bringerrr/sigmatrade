@@ -81,18 +81,18 @@ const CatalogDisplay = ({ location: { pathname } }) => {
 
   return (
     <div className="CatalogDisplay">
-      <Row>
-        <Col span={3}>
+      <Row gutter={[8, 8]}>
+        <Col xs={0} sm={0} md={3}>
           <LeftSidebar />
         </Col>
-        <Col style={{ marginTop: '24px' }} offset={1} span={20}>
+        <Col style={{ marginTop: '24px' }} xs={24} sm={24} md={21}>
           <Breadcrumb style={{ marginBottom: '15px' }}>
-            {breadcrumbItems}
-            {/* {Links.map((link) => (
+            {/* {breadcrumbItems} */}
+            {Links.map((link) => (
               <Breadcrumb.Item key="home">
                 <NavLink to={link.to}>{link.label}</NavLink>
               </Breadcrumb.Item>
-            ))} */}
+            ))}
           </Breadcrumb>
           <div>
             <Switch>

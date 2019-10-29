@@ -25,6 +25,14 @@
       font-weight: bold;
       line-height: 1.5;
       color: rgb(255, 255, 255);
+      &.__Huge {
+        display: block;
+      }
+
+      &.__Small {
+        display: none;
+      }
+
       .Logo_Add {
       }
     }
@@ -71,6 +79,40 @@
     padding-bottom: 10px;
     a {
       margin-right: 15px;
+    }
+
+    .MainHeader_Lower_Menu {
+      .ant-menu-horizontal {
+        line-height: 10px;
+      }
+      &.ant-menu {
+        background-color: transparent;
+        color: white;
+        line-height: 10px;
+        .ant-menu-item {
+          padding: 0 8px 0 0;
+        }
+      }
+      &,
+      * {
+        border: none !important;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .MainHeader {
+    .MainHeader_Upper {
+      .MainHeader_Logo {
+        &.__Huge {
+          display: none;
+        }
+
+        &.__Small {
+          display: block;
+        }
+      }
     }
   }
 }

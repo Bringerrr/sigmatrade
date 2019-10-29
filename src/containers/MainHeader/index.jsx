@@ -54,8 +54,11 @@ function MainHeader() {
           align="middle"
         >
           <Col span={3}>
-            <h3 className="MainHeader_Logo">
+            <h3 className="MainHeader_Logo __Huge">
               Сигма Трейд <span className="Logo_Add">24</span>
+            </h3>
+            <h3 className="MainHeader_Logo __Small">
+              СТ <span className="Logo_Add">24</span>
             </h3>
           </Col>
           <Col offset={1} span={8}>
@@ -105,11 +108,18 @@ function MainHeader() {
         </Row>
       </div>
       <div className="MainHeader_Lower">
-        <Row type="flex" justify="space-around" align="middle">
-          <Col offset={4} span={20}>
-            {lowerMenuItems.map((item) => (
-              <a>{item}</a>
-            ))}
+        <Row type="flex" justify="end" align="middle">
+          <Col xs={24} sm={24} md={20} span={20}>
+            <Menu
+              className="MainHeader_Lower_Menu"
+              onClick={handleClick}
+              selectedKeys={[currentMenu]}
+              mode="horizontal"
+            >
+              {lowerMenuItems.map((item) => (
+                <Menu.Item>{item}</Menu.Item>
+              ))}
+            </Menu>
           </Col>
         </Row>
       </div>

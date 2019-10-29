@@ -32,8 +32,24 @@
     justify-content: space-between;
     margin-bottom: 40px;
     margin-top: 40px;
+    .LowerHeader_Sort {
+      .Sort_Checkbox {
+        margin-left: 20px;
+      }
+    }
     .LowerHeader_Icons {
       display: flex;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .BuiltIn {
+    .LowerHeader_Sort {
+      .Sort_Checkbox {
+        margin-top: 10px;
+        margin-left: 0 !important;
+      }
     }
   }
 }
