@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'antd'
 import ProductPreviewBlock from '../../components/ProductPreview'
+import { NavLink } from 'react-router-dom'
 import {
   rangeHood,
   one,
@@ -47,7 +48,9 @@ function RangeHood() {
       <Row type="flex" style={{ justifyContent: 'stretch' }} gutter={[8, 8]}>
         {HoodsPreview.map((item, index) => (
           <Col key={index} xs={24} sm={12} md={8} lg={6} xl={6}>
-            <ProductPreviewBlock data={item} />
+            <NavLink to="/catalog/built-in-appliances/range-hoods/built-in">
+              <ProductPreviewBlock data={item} />
+            </NavLink>
           </Col>
         ))}
       </Row>

@@ -2,7 +2,7 @@
   "name": "sigmatrade",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://bringerrr.github.io",
+  "homepage": "https://bringerrr.github.io/sigmatrade",
   "dependencies": {
     "antd": "^3.24.2",
     "eval": "^0.1.4",

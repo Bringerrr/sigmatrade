@@ -1,12 +1,13 @@
 import React from 'react'
 import { Row, Col } from 'antd'
 import CustomSearchInput from '../../components/CustomSearchInput'
+import { NavLink } from 'react-router-dom'
 
 import './index.scss'
 
 const CatalogData = [
   {
-    title: 'Встраивая техника',
+    title: 'Встраиваемая техника',
     items: [
       'Вытяжки',
       'Духовые шкафы',
@@ -100,7 +101,7 @@ function Catalog() {
               <h3>{kindOfProduction.title}</h3>
               {kindOfProduction.items.map((item) => (
                 <li>
-                  <a>{item}</a>
+                  <NavLink to="/catalog/built-in-appliances">{item}</NavLink>
                 </li>
               ))}
             </ul>

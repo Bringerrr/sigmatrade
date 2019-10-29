@@ -1,28 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Row, Col, Icon, Menu, Dropdown } from 'antd'
+import { NavLink } from 'react-router-dom'
 
 import './index.scss'
 
 const { SubMenu } = Menu
-
-const menu = (
-  <Menu>
-    <Menu.Item key="0">
-      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-        1st menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item key="1">
-      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-        2nd menu item
-      </a>
-    </Menu.Item>
-    <Menu.Divider />
-    <Menu.Item key="3" disabled>
-      3rd menu item（disabled）
-    </Menu.Item>
-  </Menu>
-)
 
 const lowerMenuItems = [
   'Встраиваемая техника',
@@ -91,11 +73,13 @@ function MainHeader() {
                 Мои заказы{' '}
               </Menu.Item>
               <Menu.Item key="app">
-                <Icon
-                  style={{ fontSize: '25px', color: 'white' }}
-                  type="shopping-cart"
-                />
-                Корзина
+                <NavLink to="/user-profile/basket">
+                  <Icon
+                    style={{ fontSize: '25px', color: 'white' }}
+                    type="shopping-cart"
+                  />
+                  Корзина
+                </NavLink>
               </Menu.Item>
               <Menu.Item key="alipay">
                 <Icon style={{ fontSize: '25px', color: 'white' }} type="question" />
