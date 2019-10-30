@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
-import { Row, Col, Input, Button, Menu, Dropdown, Icon, Checkbox } from 'antd'
+import {
+  Row,
+  Col,
+  Input,
+  Button,
+  Menu,
+  Dropdown,
+  Icon,
+  Checkbox,
+  Drawer
+} from 'antd'
 import { NavLink } from 'react-router-dom'
 import rangeHood from '../../assets/rangeHood.webp' // Tell Webpack this JS file uses this image
 import Product from '../../components/Product'
@@ -142,6 +152,7 @@ function Header() {
 
 function BuiltIn() {
   const [menuItem, setMenuItem] = useState(menuItems[0])
+  const [drawer, setDrawer] = useState(false)
 
   const menu = (
     <Menu>
@@ -152,6 +163,14 @@ function BuiltIn() {
       ))}
     </Menu>
   )
+
+  const showDrawer = () => {
+    setDrawer(true)
+  }
+
+  const onClose = () => {
+    setDrawer(false)
+  }
 
   return (
     <div className="BuiltIn">
@@ -164,6 +183,19 @@ function BuiltIn() {
             <CustomSearchInput />
           </Col>
         </Row>
+      </div>
+
+      <div className="Navbar-Container __slim">
+        <Drawer
+          className="Navbar-Drawer"
+          title="Сигма Трейд 24"
+          placement="right"
+          closable={false}
+          onClose={onClose}
+          visible={drawer}
+        >
+          <ProductFilter drawer />
+        </Drawer>
       </div>
       <div className="BuiltIn_LowerHeader">
         <div className="LowerHeader_Sort">
@@ -182,6 +214,16 @@ function BuiltIn() {
           />
           <Icon style={{ fontSize: '30px' }} type="unordered-list" />
         </div>
+      </div>
+      <div>
+        <Button
+          onClick={() => {
+            setDrawer(true)
+          }}
+          icon="filter"
+        >
+          Фильтр
+        </Button>
       </div>
       <Row type="flex" justify="space-between">
         <Col xs={24} sm={24} md={18} lg={18} xl={18}>
@@ -203,7 +245,7 @@ function BuiltIn() {
           </Row>
         </Col>
         <Col xs={0} sm={0} md={4} lg={4} xl={4} span={4}>
-          <ProductFilter></ProductFilter>
+          <ProductFilter />
         </Col>
       </Row>
     </div>

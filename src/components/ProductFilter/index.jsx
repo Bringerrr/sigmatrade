@@ -35,9 +35,9 @@ function handleChange(value) {
   console.log(`selected ${value}`)
 }
 
-function ProductFilter() {
+function ProductFilter({ drawer }) {
   return (
-    <div className="ProductFilter">
+    <div className={`ProductFilter ${drawer ? '__Drawer' : null}`}>
       <div className="ProductFilter_Title">
         <h3>Фильтр товаров</h3>
       </div>

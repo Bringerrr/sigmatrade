@@ -1,0 +1,2 @@
+export const SET_SIDEBAR = 'SET_SIDEBAR'
+export const SET_DEFAULT_SIDEBAR = 'SET_DEFAULT_SIDEBAR'

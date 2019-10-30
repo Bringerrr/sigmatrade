@@ -2,7 +2,15 @@
   width: 100%;
   padding: 0 40px;
   margin-top: 15px;
+  .toggleSidebar {
+    display: none;
+  }
 }
 
 @media all and (max-width: 768px) {
+  .CatalogDisplay {
+    .toggleSidebar {
+      display: inline-block;
+    }
+  }
 }

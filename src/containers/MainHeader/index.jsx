@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Row, Col, Icon, Menu, Dropdown } from 'antd'
 import { NavLink } from 'react-router-dom'
+import { setSidebar } from '../../store/ui/ui.actions'
+import { connect } from 'react-redux'
 
 import './index.scss'
 
@@ -28,7 +30,7 @@ function MainHeader() {
           justify="space-around"
           align="middle"
         >
-          <Col xs={9} sm={3}>
+          <Col xs={9} sm={2}>
             <h3 className="MainHeader_Logo __Huge">
               Сигма Трейд <span className="Logo_Add">24</span>
             </h3>
@@ -36,7 +38,7 @@ function MainHeader() {
               СТ <span className="Logo_Add">24</span>
             </h3>
           </Col>
-          <Col offset={1} xs={0} sm={8} span={8}>
+          <Col offset={1} xs={0} sm={9} span={9}>
             <span className="MainHeader_YourManager">
               <Icon style={{ fontSize: '20px' }} type="user" />
               Ваш менеджер: <span className="YouManager_Name">Бабушкис Дмитрий</span>
@@ -89,7 +91,7 @@ function MainHeader() {
       </div>
       <div className="MainHeader_Lower">
         <Row type="flex" justify="end" align="middle">
-          <Col xs={24} sm={24} md={20} span={20}>
+          <Col xs={24} sm={24} md={21} span={21}>
             <Menu
               className="MainHeader_Lower_Menu"
               selectedKeys={[currentMenu]}

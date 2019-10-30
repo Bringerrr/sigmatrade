@@ -11,6 +11,7 @@ import { Input, Button, Row, Col, Radio, Select, Icon } from 'antd'
 import './index.scss'
 
 const { Option } = Select
+const { TextArea } = Input
 
 console.log('Busket', twelve)
 
@@ -182,23 +183,56 @@ function Checkout() {
               </Select>
             </div>
           </div>
-          <div className="Busket_Table">
-            <BusketTable isCheckout data={dataTable} />
-            <div className="Table_Footer">
-              <div className="Input-Container">
-                Введите код купона для скидки
-                <Input></Input>
-                <Button>Применить</Button>
-              </div>
-              <div className="Footer_Chekout">
-                <div className="Checkout_Amount">
-                  <div className="Amount_Title">
-                    <span>Итого: </span> <h3>41 280 P</h3>
-                  </div>
+          <div className="Checkout_Table">
+            <BusketTable data={dataTable} />
 
-                  <Button onClick={() => setCompleted(true)}>Оформить заказ</Button>
-                </div>
-              </div>
+            <div className="Table_Footer">
+              <Row
+                style={{ width: '100%' }}
+                align="middle"
+                type="flex"
+                justify="space-between"
+                className="Table_Footer-Row"
+              >
+                <Col>
+                  <div className="Input-Container">
+                    <div className="Input-Wrapper">
+                      <span>Коментарии к заказу:</span>
+                      <TextArea rows={5} className="Input"></TextArea>
+                    </div>
+                  </div>
+                </Col>
+                <Col>
+                  <Row className="Footer_Right" type="flex">
+                    <Col lg={24} md={12}>
+                      <div className="Footer_Info">
+                        <span>
+                          Общий вес: <b>5 300 г</b>
+                        </span>
+                        <span>
+                          НДС(20%, включен в цену): <b>848ю30 руб.</b>
+                        </span>
+                        <span>
+                          Доставка: <b>700 руб.</b>
+                        </span>
+                      </div>
+                    </Col>
+                    <Col lg={24} md={12}>
+                      <div className="Footer_Chekout">
+                        <div className="Checkout_Amount">
+                          <div className="Amount_Title">
+                            <span>Итого: </span> <b>41 280 P</b>
+                          </div>
+
+                          <NavLink to="/user-profile/basket/checkout">
+                            <Button className="Amount_Button">Оформить заказ</Button>
+                          </NavLink>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
             </div>
           </div>
         </>

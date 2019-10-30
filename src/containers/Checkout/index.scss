@@ -51,11 +51,19 @@
       }
       .ant-radio-checked::after {
       }
-      .ant-radio-inner::after {
-        background-color: rgb(142, 58, 136);
-        height: 12px;
-        width: 12px;
+      .ant-radio-inner {
+        position: relative;
+        &::after {
+          background-color: rgb(142, 58, 136);
+          position: absolute;
+          height: 12px;
+          width: 12px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
+
       .ant-radio-inner {
         height: 20px;
         width: 20px;
@@ -114,20 +122,59 @@
     }
   }
 
-  .Ckeckout_Table {
+  .Checkout_Table {
     border-radius: 20px;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.16);
     overflow: hidden;
     .Table_Footer {
       display: flex;
       justify-content: space-between;
-      .Input-Container {
-        width: 250px;
-      }
+      background-color: rgb(235, 235, 235);
+      border-radius: 0px 0px 20px 20px;
+      padding: 45px;
 
-      .Checkout_Amount {
-        .Amount_Title {
-          display: flex;
+      .Input-Container {
+        display: inline-flex;
+        // align-items: flex-end;
+
+        .Input-Wrapper {
+          width: 250px;
+          flex-direction: column;
+          h3 {
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+          .Input {
+            border-radius: 20px;
+          }
+        }
+      }
+      .Footer_Info {
+        display: flex;
+        flex-direction: column;
+        span {
+          margin-top: 9px;
+        }
+        margin-right: 80px;
+      }
+      .Footer_Chekout {
+        display: inline-flex;
+        .Checkout_Amount {
+          .Amount_Title {
+            display: flex;
+            margin-bottom: 40px;
+            b {
+              margin-left: 8px;
+              font-size: 16px;
+            }
+          }
+          .Amount_Button {
+            background-color: rgb(142, 58, 136);
+            border-radius: 20px;
+            padding: 0 30px;
+            color: white;
+          }
         }
       }
     }
@@ -169,6 +216,49 @@
         }
         .Dropdown-Input {
           width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .Checkout {
+    .Checkout_Table {
+      .Footer_Right {
+        justify-content: center;
+        .Footer_Info {
+          margin-right: 0px;
+        }
+      }
+
+      .Footer_Left {
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      .Table_Footer {
+        flex-direction: column;
+        .Table_Footer-Row {
+          justify-content: center;
+        }
+        .Footer_Info {
+          margin-bottom: 20px;
+        }
+        .Input-Container {
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 20px;
+          .Input-Button {
+            margin-top: 25px;
+          }
+        }
+        .Footer_Chekout {
+          justify-content: center;
+          .Amount_Title {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px !important;
+          }
         }
       }
     }

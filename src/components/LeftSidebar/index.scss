@@ -37,6 +37,19 @@
 }
 
 .Navbar-Drawer {
+  .ant-drawer-header {
+    height: 70px;
+    background-color: #8e3a88;
+    display: flex;
+    align-items: center;
+    .ant-drawer-title {
+      font-size: 19px;
+      color: white;
+    }
+  }
+}
+
+.Navbar-Drawer {
   .ant-drawer-body {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Drawer, Button, Radio } from 'antd'
+import { connect } from 'react-redux'
+import { setSidebar } from '../../store/ui/ui.actions'
 
 import './index.scss'
 
@@ -24,21 +26,16 @@ const news = [
   { type: 'text', value: 'Расписание обучения' }
 ]
 
-function LeftSidebar() {
+function LeftSidebar({ leftSidebar, setSidebar }) {
+  console.log('sideBar', leftSidebar)
   const [state, setState] = useState({ visible: false, placement: 'left' })
 
   const showDrawer = () => {
-    setState({
-      ...state,
-      visible: true
-    })
+    setSidebar(true)
   }
 
   const onClose = () => {
-    setState({
-      ...state,
-      visible: false
-    })
+    setSidebar(false)
   }
 
   const onChange = (e) => {
@@ -82,11 +79,11 @@ function LeftSidebar() {
       <div className="Navbar-Container __slim">
         <Drawer
           className="Navbar-Drawer"
-          title="СТ 24"
+          title="Сигма Трейд 24"
           placement={state.placement}
           closable={false}
           onClose={onClose}
-          visible={state.visible}
+          visible={leftSidebar}
         >
           <div className="LeftSidebar_Nav">
             {nav.map((item) => (
@@ -97,7 +94,11 @@ function LeftSidebar() {
           </div>
           <div className="LeftSidebar_Buttons">
             {buttons.map((item) => (
-              <a href="#" className="LeftSidebar_Item __Button">
+              <a
+                style={{ color: item.color }}
+                href="#"
+                className="LeftSidebar_Item __Button"
+              >
                 {item.value}
               </a>
             ))}
@@ -115,4 +116,7 @@ function LeftSidebar() {
   )
 }
 
-export default LeftSidebar
+export default connect(
+  (state) => ({ leftSidebar: state.ui.leftSidebar }),
+  { setSidebar }
+)(LeftSidebar)

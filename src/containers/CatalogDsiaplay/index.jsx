@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import LeftSidebar from '../../components/LeftSidebar'
 import BuiltIn from '../BuiltIn'
 import RangeHood from '../RangeHood'
@@ -7,8 +8,9 @@ import BuiltInAppliances from '../BuiltInAppliances'
 import ProductCard from '../ProductCard'
 import Busket from '../Busket'
 import Checkout from '../Checkout'
-import { Breadcrumb, Alert, Row, Col, Button } from 'antd'
+import { Breadcrumb, Alert, Row, Col, Button, Icon } from 'antd'
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom'
+import { setSidebar } from '../../store/ui/ui.actions'
 
 import { domed } from '../../assets'
 import './index.scss'
@@ -64,7 +66,10 @@ const defaultCardData = {
   dropdownItems
 }
 
-const CatalogDisplay = ({ location: { pathname } }) => {
+const CatalogDisplay = ({ location: { pathname }, setSidebar }) => {
+  useEffect(() => {
+    setSidebar(false)
+  }, [pathname])
   const [sideBar, toggleSideBar] = []
   const pathSnippets = pathname.split('/').filter((i) => i)
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
@@ -83,14 +88,14 @@ const CatalogDisplay = ({ location: { pathname } }) => {
 
   return (
     <div className="CatalogDisplay">
-      {/* <Button
+      <Button
+        icon="menu"
+        className="toggleSidebar"
         onClick={() => {
-          toggleSideBar()
+          setSidebar(true)
         }}
-        style={{ position: 'absolute' }}
-      >
-        Open
-      </Button> */}
+        // style={{ position: 'absolute' }}
+      ></Button>
       <Row gutter={[8, 8]}>
         <Col xs={0} sm={0} md={3}>
           <LeftSidebar />
@@ -155,4 +160,11 @@ const CatalogDisplay = ({ location: { pathname } }) => {
   )
 }
 
-export default withRouter(CatalogDisplay)
+export default withRouter(
+  connect(
+    (state) => ({}),
+    {
+      setSidebar
+    }
+  )(CatalogDisplay)
+)
