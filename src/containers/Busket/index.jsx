@@ -52,7 +52,12 @@ function Busket() {
   return (
     <div className="Busket">
       <div className="Busket_Header">
-        <Row type="flex" justify="space-between" style={{ width: '100%' }}>
+        <Row
+          className="Busket_Header-Container"
+          type="flex"
+          justify="space-between"
+          style={{ width: '100%' }}
+        >
           <Col xs={24} sm={14} md={14} lg={14} xl={14}>
             <h1>Корзина </h1>
           </Col>

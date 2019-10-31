@@ -17,11 +17,18 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid #bcbcbc;
+    b {
+      word-wrap: break-word;
+    }
   }
   .Button-Container {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    text-align: center;
+    a {
+      margin-top: 15px;
+    }
   }
 }
 

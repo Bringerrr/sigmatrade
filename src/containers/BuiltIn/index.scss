@@ -2,6 +2,15 @@
   h1 {
     font-weight: bold;
   }
+  .Filter_Icon {
+    display: none;
+  }
+
+  .Filter-Container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   margin-top: 10px;
   .BuiltIn_Header {
     display: flex;
@@ -43,12 +52,29 @@
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 992px) {
   .BuiltIn {
+    .Filter_Icon {
+      display: inline-block;
+    }
     .LowerHeader_Sort {
       .Sort_Checkbox {
         margin-top: 10px;
         margin-left: 0 !important;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 633px) {
+  .BuiltIn {
+    .BuiltIn_Header {
+      .BuiltIn_Header-Container {
+        display: flex;
+        flex-direction: column-reverse;
+        h1 {
+          margin: 20px 0 0;
+        }
       }
     }
   }

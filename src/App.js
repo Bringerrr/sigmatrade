@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 import CatalogDisplay from './containers/CatalogDsiaplay'
-import CatalogDisplay1 from './containers/CatalogDisplay1'
 import MainHeader from './containers/MainHeader'
 
 function App() {

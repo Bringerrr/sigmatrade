@@ -175,7 +175,12 @@ function BuiltIn() {
   return (
     <div className="BuiltIn">
       <div className="BuiltIn_Header">
-        <Row type="flex" justify="space-between" style={{ width: '100%' }}>
+        <Row
+          className="BuiltIn_Header-Container"
+          type="flex"
+          justify="space-between"
+          style={{ width: '100%' }}
+        >
           <Col xs={24} sm={14} md={14} lg={14} xl={14}>
             <h1>Встраиваемые вытяжки </h1>
           </Col>
@@ -216,17 +221,20 @@ function BuiltIn() {
         </div>
       </div>
       <div>
-        <Button
-          onClick={() => {
-            setDrawer(true)
-          }}
-          icon="filter"
-        >
-          Фильтр
-        </Button>
+        <div className="Filter-Container">
+          <Button
+            onClick={() => {
+              setDrawer(true)
+            }}
+            icon="filter"
+            className="Filter_Icon"
+          >
+            Фильтр
+          </Button>
+        </div>
       </div>
       <Row type="flex" justify="space-between">
-        <Col xs={24} sm={24} md={18} lg={18} xl={18}>
+        <Col xs={24} sm={24} md={24} lg={18} xl={18}>
           <Row gutter={[8, 8]} type="flex" justify="space-between">
             {products.map((product) => (
               <Col
@@ -244,7 +252,7 @@ function BuiltIn() {
             ))}
           </Row>
         </Col>
-        <Col xs={0} sm={0} md={4} lg={4} xl={4} span={4}>
+        <Col xs={0} sm={0} md={0} lg={4} xl={4} span={4}>
           <ProductFilter />
         </Col>
       </Row>

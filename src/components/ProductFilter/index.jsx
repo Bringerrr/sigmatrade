@@ -97,7 +97,7 @@ function ProductFilter({ drawer }) {
       </div>
 
       <div className="Product_Attribute">
-        <b>
+        <b className="Performance">
           Производительность, м<sup>3</sup>/час
         </b>
         <Row>

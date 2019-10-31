@@ -225,7 +225,14 @@ function Checkout() {
                           </div>
 
                           <NavLink to="/user-profile/basket/checkout">
-                            <Button className="Amount_Button">Оформить заказ</Button>
+                            <Button
+                              onClick={() => {
+                                setCompleted(true)
+                              }}
+                              className="Amount_Button"
+                            >
+                              Оформить заказ
+                            </Button>
                           </NavLink>
                         </div>
                       </div>

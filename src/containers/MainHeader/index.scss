@@ -43,6 +43,7 @@
       }
 
       .Logo_Add {
+        color: #f5acf0;
       }
     }
 
@@ -199,6 +200,15 @@
     }
     .Menu_Item-Text {
       display: none;
+      &.__Busket {
+        // display: flex !important;
+        .title {
+          text-align: left !important;
+        }
+        .subtitle {
+          font-size: 9px;
+        }
+      }
     }
     .Menu-Header__Slim {
       display: inline;

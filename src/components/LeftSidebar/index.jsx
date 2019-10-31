@@ -46,9 +46,6 @@ function LeftSidebar({ leftSidebar, setSidebar }) {
   }
   return (
     <div className="LeftSidebar">
-      {/* <Button className="showDrawer" type="primary" onClick={showDrawer}>
-        Open
-      </Button> */}
       <div className="Navbar-Container __wide">
         <div className="LeftSidebar_Nav">
           {nav.map((item) => (

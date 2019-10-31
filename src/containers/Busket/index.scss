@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     h1 {
       margin: 0;
       font-weight: bold;
@@ -75,6 +76,15 @@
 
 @media all and (max-width: 768px) {
   .Busket {
+    .Busket_Header {
+      .Busket_Header-Container {
+        display: flex;
+        flex-direction: column-reverse;
+        h1 {
+          margin: 20px 0 0;
+        }
+      }
+    }
     .Busket_Table {
       .Table_Footer {
         flex-direction: column;

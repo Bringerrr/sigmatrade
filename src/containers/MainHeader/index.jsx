@@ -75,7 +75,9 @@ function MainHeader() {
                     style={{ fontSize: '25px', color: 'white' }}
                     type="shopping-cart"
                   />
-                  <span className="Menu_Item-Text">Корзина</span>
+                  <span className="Menu_Item-Text __Busket">
+                    <div className="title">Корзина</div>
+                  </span>
                 </NavLink>
               </Menu.Item>
               <Menu.Item key="alipay">

@@ -28,6 +28,7 @@
       padding: 10px 10px 10px 30px;
       border-radius: 20px;
       margin-top: 20px;
+      word-wrap: break-word;
     }
   }
 
@@ -50,6 +51,12 @@
 }
 
 .Navbar-Drawer {
+  .LeftSidebar_Buttons {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 20px 0 10px 0;
+    margin: 10px 0px;
+  }
   .ant-drawer-body {
     display: flex;
     flex-direction: column;
