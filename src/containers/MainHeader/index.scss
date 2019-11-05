@@ -18,9 +18,42 @@
   a {
     color: rgb(255, 255, 255);
   }
+  .Busket_Container {
+    position: relative;
+    width: 80px;
+    i {
+      position: absolute;
+      top: 5px;
+    }
+    .Menu_Item-Text {
+      &.__Busket {
+        position: absolute;
+        top: -5px;
+        left: 30px;
+        // display: flex !important;
+        & .title {
+          position: relative;
+        }
+        & .title::before {
+          position: absolute;
+          content: '2 товара ';
+          top: 6px;
+          left: -30px;
+          font-size: 9px;
+        }
+        & .title::after {
+          position: absolute;
+          top: 17px;
+          left: -30px;
+          font-size: 9px;
+          content: 'на сумму 80339 руб';
+        }
+      }
+    }
+  }
 
   .MainHeader_Upper {
-    padding: $paddings;
+    padding: 0 40px;
 
     .MainHeader__ItemHeight {
       height: 100%;
@@ -67,7 +100,7 @@
       align-items: center;
       justify-content: flex-end;
       &.ant-menu-horizontal {
-        line-height: 40px;
+        height: 60px;
       }
 
       .submenu-title-wrapper {
@@ -127,7 +160,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     a {
-      margin-right: 15px;
+      margin-right: 50px;
     }
 
     .MainHeader_Lower_Menu {
@@ -146,7 +179,7 @@
 
         .ant-menu-item {
           color: white !important;
-          padding: 0 8px 0 0;
+          padding: 0 50px 0 0;
           background-color: black !important;
         }
       }
@@ -158,19 +191,19 @@
   }
 }
 
-@media all and (max-width: 1532px) {
+@media all and (max-width: 1830px) {
   .MainHeader {
     .MainHeader_Upper {
-      .MainHeader_Upper_Right {
-        &.ant-menu-horizontal {
-          height: 70px;
+      .MainHeader_Logo {
+        &.__Huge {
+          font-size: 14px;
         }
       }
     }
   }
 }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 1392px) {
   .MainHeader {
     .MainHeader_Upper {
       .MainHeader_Logo {
@@ -194,8 +227,31 @@
     .MainHeader_Upper {
       .MainHeader_Upper_Right {
         &.ant-menu-horizontal {
-          height: 70px;
+          height: 60px;
         }
+      }
+    }
+    .Busket_Container {
+      position: static;
+      width: auto;
+      &:before {
+        position: absolute;
+        content: '2';
+        width: 20px;
+        left: 27px;
+        top: 7px;
+        line-height: 17px;
+        text-align: center;
+        height: 20px;
+        border-radius: 50%;
+        background-color: black;
+        border: 1px solid white;
+        color: white;
+        z-index: 10;
+      }
+      i {
+        position: relative;
+        top: 0;
       }
     }
     .Menu_Item-Text {
@@ -223,6 +279,35 @@
           display: block;
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: 576px) {
+  .MainHeader {
+    .MainHeader_Upper {
+      padding: 0 0px;
+    }
+    .MainHeader_Lower {
+      padding: 10px 20px;
+    }
+    li,
+    .ant-menu-submenu-title,
+    a {
+      padding: 0;
+      margin-left: 0px !important;
+    }
+
+    .ant-menu-item {
+      padding: 0px;
+    }
+  }
+}
+
+@media all and (max-width: 348px) {
+  .MainHeader {
+    .MainHeader_Logo {
+      display: none !important;
     }
   }
 }

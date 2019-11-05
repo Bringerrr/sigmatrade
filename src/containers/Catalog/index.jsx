@@ -90,7 +90,7 @@ function Catalog() {
           <Row className="Button-Container" type="flex" justify="end">
             <div className="Catalog_Button"> Скидки</div>
             <div className="Catalog_Button"> Акции</div>
-            <div className="Catalog_Button"> Уценки</div>
+            <div className="Catalog_Button"> Уценка</div>
           </Row>{' '}
         </Col>
       </Row>

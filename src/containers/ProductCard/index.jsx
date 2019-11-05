@@ -1,10 +1,12 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Col, Row, Carousel, Dropdown, Icon } from 'antd'
+import { NavLink } from 'react-router-dom'
 import CustomCarousel from '../../components/CustomCarousel'
 import CustomDropdown from '../../components/CustomDropdown'
 import Product from '../../components/Product'
 
 import CustomSearchInput from '../../components/CustomSearchInput'
+import { ReactComponent as Return } from '../../assets/return.svg'
 
 import { rangeHood } from '../../assets'
 import './index.scss'
@@ -69,6 +71,12 @@ const bonuses = [
 
 const ProductCard = ({ data }) => {
   const inputEl = useRef(null)
+  const [basketCount, setBasketCount] = useState(0)
+
+  const changeBasketCount = (number) => {
+    if (basketCount + number < 0) return null
+    setBasketCount(basketCount + number)
+  }
   useEffect(() => {
     console.log(inputEl)
   }, [])
@@ -85,8 +93,16 @@ const ProductCard = ({ data }) => {
   } = data
   return (
     <div ref={inputEl} className="ProductCard">
-      <Row type="flex" justify="end">
-        <Col xs={24} sm={18} md={12} lg={12} xl={8}>
+      <Row className="ProductCard_Header" type="flex" justify="space-between">
+        <Col>
+          <NavLink
+            className="ProductCard_Return"
+            to="/catalog/built-in-appliances/range-hood"
+          >
+            <Return /> Купольные вытяжки
+          </NavLink>
+        </Col>
+        <Col className="Search_Input" xs={24} sm={24} md={12} lg={12} xl={8}>
           <CustomSearchInput />
         </Col>
       </Row>
@@ -126,7 +142,9 @@ const ProductCard = ({ data }) => {
               }}
               className="price"
             >
-              {price}
+              <span> {price}</span>
+
+              <span className="OriginPrice"> 6750 руб.</span>
             </b>
             <span
               style={{
@@ -145,6 +163,28 @@ const ProductCard = ({ data }) => {
             <span className="simpleText __margin"> Маржа: {margin}</span>
             <span className="simpleText"> Цена с наценкой: {priceWithMarkup}</span>
           </div>
+          <div className="Basket_Container">
+            <div className="Basket_Input">
+              <div
+                className="Increase_Basket"
+                onClick={() => {
+                  changeBasketCount(-1)
+                }}
+              >
+                -
+              </div>
+              <div>{basketCount}</div>
+              <div
+                className="Increase_Basket"
+                onClick={() => {
+                  changeBasketCount(1)
+                }}
+              >
+                +
+              </div>
+            </div>
+            <div className="Busket_Submit">В корзину</div>
+          </div>
           <CustomDropdown data={dropdownItems} />
           <div className="ProductCard__Download">
             <Icon style={{ color: 'red', fontSize: '24px' }} type="file-pdf" />
@@ -155,11 +195,13 @@ const ProductCard = ({ data }) => {
 
       <Row>
         <Col xs={24} sm={24} md={20} lg={20} xl={20}>
-          <h1>Сопуствующие товары</h1>
+          <h1>
+            <b>Сопуствующие товары</b>
+          </h1>
           <Row gutter={[8, 8]} type="flex" justify="space-between">
             {products.map((product) => (
               <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                <Product data={product} />
+                <Product isCard data={product} />
               </Col>
             ))}
           </Row>

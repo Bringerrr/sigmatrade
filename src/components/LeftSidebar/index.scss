@@ -74,12 +74,24 @@
   }
 }
 
-@media all and (max-width: 1261px) {
+@media all and (max-width: 1510px) {
   .LeftSidebar {
     margin-right: 10px;
     .LeftSidebar_Item {
       &.__Button {
         padding: 10px 10px 10px 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1050px) {
+  .LeftSidebar {
+    .LeftSidebar_Item {
+      &.__Button {
+        padding: 10px 10px 10px 10px;
+        font-size: 9px;
       }
     }
   }

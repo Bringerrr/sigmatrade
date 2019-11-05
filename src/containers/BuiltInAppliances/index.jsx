@@ -4,6 +4,8 @@ import ProductPreviewBlock from '../../components/ProductPreview'
 import { one, two, three, four, five, six, seven, eight } from '../../assets/builtIn'
 import { NavLink } from 'react-router-dom'
 
+import HeaderWithSearch from '../../components/HeaderWithSearch'
+
 import './index.scss'
 
 const HoodsPreview = [
@@ -20,8 +22,8 @@ const HoodsPreview = [
 function BuiltInAppliances() {
   return (
     <div className="BuiltInAppliances">
-      <h1> Встраиваемая техника </h1>
-      <Row gutter={[8, 8]}>
+      <HeaderWithSearch title="Встраиваемая техника" />
+      <Row gutter={[40, 40]}>
         {HoodsPreview.map((item) => (
           <NavLink to="/catalog/built-in-appliances/range-hoods">
             <Col xs={24} sm={12} md={8} lg={6} xl={6}>

@@ -15,7 +15,7 @@ function CustomDropDown({ data }) {
       {data.map((dropDownItem) => (
         <div className="CustomDropDown-Container">
           <div className="CustomDropDown_Title">
-            <h3>{dropDownItem.title}</h3>{' '}
+            <h3 style={{ fontWeight: 'bold' }}>{dropDownItem.title}</h3>{' '}
             {!state[dropDownItem.id] ? (
               <Icon onClick={() => togleDropDown(dropDownItem.id)} type="plus" />
             ) : (

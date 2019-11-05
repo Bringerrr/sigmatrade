@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CustomSearchInput from '../../components/CustomSearchInput'
+import HeaderWithSearch from '../../components/HeaderWithSearch'
 import BusketTable from '../../components/BusketTable'
 import CheckoutCompleted from '../../components/CheckoutCompleted'
 import { twelve } from '../../assets'
@@ -100,19 +100,7 @@ function Checkout() {
       ) : (
         <>
           <div className="Checkout_Header">
-            <Row
-              className="Header_row"
-              type="flex"
-              justify="space-between"
-              style={{ width: '100%' }}
-            >
-              <Col xs={24} sm={14} md={14} lg={14} xl={14}>
-                <h1>Оформление заказа </h1>
-              </Col>
-              <Col xs={24} sm={8} md={8} lg={8} xl={8}>
-                <CustomSearchInput />
-              </Col>
-            </Row>
+            <HeaderWithSearch title="Оформление заказа" />
           </div>
           <div className="Checkout_Form">
             <h3>Контактная информация</h3>
@@ -174,7 +162,7 @@ function Checkout() {
                 className={'Form-Dropdown_Title'}
                 style={{ marginBottom: '20px' }}
               >
-                Компания для поучения счета
+                Компания для получения счета
               </div>
               <Select className="Dropdown-Input" defaultValue="1">
                 <Option value="1">ООО "Тестовая компания"</Option>
@@ -184,8 +172,8 @@ function Checkout() {
             </div>
           </div>
           <div className="Checkout_Table">
+            <h3 className="Checkout_Table_Header">Товары в заказе</h3>
             <BusketTable data={dataTable} />
-
             <div className="Table_Footer">
               <Row
                 style={{ width: '100%' }}

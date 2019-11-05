@@ -14,7 +14,8 @@ import { NavLink } from 'react-router-dom'
 import rangeHood from '../../assets/rangeHood.webp' // Tell Webpack this JS file uses this image
 import Product from '../../components/Product'
 import ProductFilter from '../../components/ProductFilter'
-import CustomSearchInput from '../../components/CustomSearchInput'
+import HeaderWithSearch from '../../components/HeaderWithSearch'
+import { ReactComponent as NineDots } from '../../assets/9dots.svg'
 import './index.scss'
 
 const { Search } = Input
@@ -157,7 +158,11 @@ function BuiltIn() {
   const menu = (
     <Menu>
       {menuItems.map((item, index) => (
-        <Item onClick={() => setMenuItem(item)} key={index}>
+        <Item
+          className="Sort_Dropdown"
+          onClick={() => setMenuItem(item)}
+          key={index}
+        >
           <a href="#">{item}</a>
         </Item>
       ))}
@@ -175,19 +180,7 @@ function BuiltIn() {
   return (
     <div className="BuiltIn">
       <div className="BuiltIn_Header">
-        <Row
-          className="BuiltIn_Header-Container"
-          type="flex"
-          justify="space-between"
-          style={{ width: '100%' }}
-        >
-          <Col xs={24} sm={14} md={14} lg={14} xl={14}>
-            <h1>Встраиваемые вытяжки </h1>
-          </Col>
-          <Col xs={24} sm={8} md={8} lg={8} xl={8}>
-            <CustomSearchInput />
-          </Col>
-        </Row>
+        <HeaderWithSearch title="Встраиваемые вытяжкки" />
       </div>
 
       <div className="Navbar-Container __slim">
@@ -213,10 +206,7 @@ function BuiltIn() {
           <Checkbox className="Sort_Checkbox">В наличии</Checkbox>
         </div>
         <div className="LowerHeader_Icons">
-          <Icon
-            style={{ color: '#8e3a88', fontSize: '30px', marginRight: '20px' }}
-            type="table"
-          />
+          <NineDots className="NineDots_Icon" />
           <Icon style={{ fontSize: '30px' }} type="unordered-list" />
         </div>
       </div>

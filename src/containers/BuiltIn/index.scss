@@ -40,14 +40,23 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 40px;
-    margin-top: 40px;
     .LowerHeader_Sort {
+      a {
+        color: #8e3a88;
+      }
       .Sort_Checkbox {
         margin-left: 20px;
       }
     }
     .LowerHeader_Icons {
       display: flex;
+      align-items: center;
+      svg.NineDots_Icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 20px;
+        fill: #8e3a88 !important;
+      }
     }
   }
 }

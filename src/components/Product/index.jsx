@@ -18,7 +18,9 @@ function Product({ data }) {
         <img width={'100%'} src={img} alt={title} />
       </div>
       <h3 className="Product_Title">{title}</h3>
-      <span className="simpleText">{type}</span>
+      <span style={{ marginBottom: '20px' }} className="simpleText">
+        {type}
+      </span>
       <b
         style={{
           color:

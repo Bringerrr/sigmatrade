@@ -1,0 +1,20 @@
+.HeaderAndSearch_Container {
+  .ant-input {
+    border-radius: 20px !important;
+  }
+  h1 {
+    font-weight: bold;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .HeaderAndSearch_Container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 40px !important;
+    h1 {
+      padding: 20px 0 0;
+      font-weight: bold;
+    }
+  }
+}

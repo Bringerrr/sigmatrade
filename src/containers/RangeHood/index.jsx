@@ -21,6 +21,7 @@ import {
   fivteen
 } from '../../assets/index.js'
 
+import HeaderWithSearch from '../../components/HeaderWithSearch'
 import './index.scss'
 
 const HoodsPreview = [
@@ -44,10 +45,8 @@ const HoodsPreview = [
 function RangeHood() {
   return (
     <div className="RangeHood">
-      <h1>
-        <b>Вытяжки</b>
-      </h1>
-      <Row type="flex" style={{ justifyContent: 'stretch' }} gutter={[8, 8]}>
+      <HeaderWithSearch title="Вытяжки" />
+      <Row type="flex" style={{ justifyContent: 'stretch' }} gutter={[40, 40]}>
         {HoodsPreview.map((item, index) => (
           <Col key={index} xs={24} sm={12} md={8} lg={6} xl={6}>
             <NavLink to="/catalog/built-in-appliances/range-hoods/built-in">

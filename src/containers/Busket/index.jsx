@@ -1,13 +1,11 @@
 import React from 'react'
-import CustomSearchInput from '../../components/CustomSearchInput'
+import HeaderWithSearch from '../../components/HeaderWithSearch'
 import BusketTable from '../../components/BusketTable'
 import { twelve } from '../../assets'
 import { NavLink } from 'react-router-dom'
 
 import { Input, Button, Row, Col } from 'antd'
 import './index.scss'
-
-console.log('Busket', twelve)
 
 const dataTable = [
   {
@@ -52,7 +50,8 @@ function Busket() {
   return (
     <div className="Busket">
       <div className="Busket_Header">
-        <Row
+        <HeaderWithSearch title="Корзина" />
+        {/* <Row
           className="Busket_Header-Container"
           type="flex"
           justify="space-between"
@@ -64,7 +63,7 @@ function Busket() {
           <Col xs={24} sm={8} md={8} lg={8} xl={8}>
             <CustomSearchInput />
           </Col>
-        </Row>
+        </Row> */}
       </div>
       <div className="Busket_Table">
         <BusketTable data={dataTable} />
