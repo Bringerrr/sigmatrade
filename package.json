@@ -6,7 +6,7 @@
   "dependencies": {
     "antd": "^3.24.2",
     "eval": "^0.1.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-redux": "^7.1.1",
